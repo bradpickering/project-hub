@@ -29,7 +29,7 @@ import {
   List,
   ListItem,
   ListIcon,
-  Link
+  Link,
 } from "@chakra-ui/react";
 import ImageCarousel from "./ImageCarousel";
 import {
@@ -37,6 +37,7 @@ import {
   FaBookmark,
   FaPaperPlane,
   FaCheckCircle,
+  FaStar,
 } from "react-icons/fa";
 import { TriangleUpIcon, TriangleDownIcon } from "@chakra-ui/icons";
 import { useEffect, useRef } from "react";
@@ -131,7 +132,7 @@ export default function ProjectCard() {
           <IconButton
             variant="ghost"
             boxSize={12}
-            icon={<Icon as={FaBookmark} />}
+            icon={<Icon as={FaStar} />}
           />
         </CardFooter>
       </Card>
@@ -184,11 +185,16 @@ export default function ProjectCard() {
                       <WrapItem>
                         <Flex>
                           <Icon
-                            as={FaCheckCircle}
+                            viewBox="0 0 200 200"
                             color="green.500"
                             marginTop={1}
                             marginRight={1}
-                          />
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
+                            />
+                          </Icon>
                           <Link>{tag}</Link>
                         </Flex>
                       </WrapItem>
@@ -206,18 +212,17 @@ export default function ProjectCard() {
                   </List> */}
                 </Wrap>
               </Flex>
-            
 
-              <Divider/>
+              <Divider />
               <Heading size="md">Comments</Heading>
-              <Flex direction='column' gap={4} maxH={500} overflow='scroll'>
-                <Comment/>
-                <Comment/>
-                <Comment/>
-                <Comment/>
-                <Comment/>
-                <Comment/>              <Comment/>
-                <Comment/>
+              <Flex direction="column" gap={4} maxH={500} overflow="scroll">
+                <Comment />
+                <Comment />
+                <Comment />
+                <Comment />
+                <Comment />
+                <Comment /> <Comment />
+                <Comment />
               </Flex>
             </Flex>
           </ModalBody>
