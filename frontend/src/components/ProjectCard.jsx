@@ -29,6 +29,7 @@ import {
   List,
   ListItem,
   ListIcon,
+  Link
 } from "@chakra-ui/react";
 import ImageCarousel from "./ImageCarousel";
 import {
@@ -188,7 +189,7 @@ export default function ProjectCard() {
                             marginTop={1}
                             marginRight={1}
                           />
-                          <Text>{tag}</Text>
+                          <Link>{tag}</Link>
                         </Flex>
                       </WrapItem>
                     );
@@ -209,10 +210,13 @@ export default function ProjectCard() {
 
               <Divider/>
               <Heading size="md">Comments</Heading>
-              <Flex direction='column' gap={4}>
+              <Flex direction='column' gap={4} maxH={500} overflow='scroll'>
                 <Comment/>
                 <Comment/>
                 <Comment/>
+                <Comment/>
+                <Comment/>
+                <Comment/>              <Comment/>
                 <Comment/>
               </Flex>
             </Flex>
