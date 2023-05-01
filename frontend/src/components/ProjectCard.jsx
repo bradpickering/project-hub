@@ -58,7 +58,10 @@ export default function ProjectCard() {
     "TypeScript",
     "MongoDB",
     "ExpressJS",
+    "Docker",
+    "Redis",
   ];
+  const links = ["GitHub", "Webpage"];
   const colours = ["teal", "green", "red", "yellow", "pink"];
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -112,7 +115,7 @@ export default function ProjectCard() {
               <Image
                 maxH="xl"
                 objectFit="cover"
-                src="https://i.imgur.com/pTds4WC.png"
+                src="https://i.imgur.com/OPlbxvO.png"
               />
 
               <Wrap>
@@ -139,7 +142,7 @@ export default function ProjectCard() {
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent maxW={{ md: "70vw", sm: "90vw" }}>
+        <ModalContent maxW={{ md: "70vw", sm: "90vw" }} maxH='90vh' overflowY='scroll'>
           <ModalHeader display="flex" justifyContent="center" fontSize={30}>
             Project Title
           </ModalHeader>
@@ -154,9 +157,37 @@ export default function ProjectCard() {
 
               <Flex justify="center">
                 <Image
-                  objectFit="cover"
-                  src="https://i.imgur.com/pTds4WC.png"
+                  maxW='60%'
+                  objectFit="fill"
+                  src="https://i.imgur.com/OPlbxvO.png"
                 />
+              </Flex>
+
+              <Divider />
+              <Flex direction="column">
+                <Heading size="md">Links</Heading>
+                <List marginTop={3} marginLeft={4}>
+                  {links.map((link) => {
+                    return (
+                      <Flex>
+                        <ListIcon
+                          viewBox="0 0 200 200"
+                          color="green.500"
+                          marginTop={1}
+                          marginRight={1}
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
+                          />
+                        </ListIcon>
+                        <ListItem>
+                          <Link as="b">{link}</Link>
+                        </ListItem>
+                      </Flex>
+                    );
+                  })}
+                </List>
               </Flex>
 
               <Divider />
@@ -200,34 +231,27 @@ export default function ProjectCard() {
                       </WrapItem>
                     );
                   })}
-                  {/* <List spacing={3}>
-                    {tags.map(tag => {
-                      return (
-                      <ListItem display='flex'>
-                        <ListIcon as={FaCheckCircle} color='green.500'/>
-                        {tag}
-                      </ListItem>
-                      )
-                    })}
-                  </List> */}
                 </Wrap>
               </Flex>
 
               <Divider />
               <Heading size="md">Comments</Heading>
-              <Flex direction="column" gap={4} maxH={500} overflow="scroll">
+              <Flex direction="column" gap={4}
+              // maxH={500} overflowY="scroll"
+              >
                 <Comment />
                 <Comment />
                 <Comment />
                 <Comment />
                 <Comment />
-                <Comment /> <Comment />
+                <Comment />
+                <Comment />
                 <Comment />
               </Flex>
             </Flex>
           </ModalBody>
 
-          <ModalFooter>
+          <ModalFooter position='sticky' bottom={0} backgroundColor='white'>
             <InputGroup>
               <Textarea
                 ref={ref}
