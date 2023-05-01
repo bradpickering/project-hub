@@ -142,7 +142,11 @@ export default function ProjectCard() {
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent maxW={{ md: "70vw", sm: "90vw" }} maxH='90vh' overflowY='scroll'>
+        <ModalContent
+          maxW={{ md: "70vw", sm: "90vw" }}
+          maxH="90vh"
+          overflowY="scroll"
+        >
           <ModalHeader display="flex" justifyContent="center" fontSize={30}>
             Project Title
           </ModalHeader>
@@ -157,7 +161,7 @@ export default function ProjectCard() {
 
               <Flex justify="center">
                 <Image
-                  maxW='60%'
+                  maxW="60%"
                   objectFit="fill"
                   src="https://i.imgur.com/OPlbxvO.png"
                 />
@@ -236,8 +240,10 @@ export default function ProjectCard() {
 
               <Divider />
               <Heading size="md">Comments</Heading>
-              <Flex direction="column" gap={4}
-              // maxH={500} overflowY="scroll"
+              <Flex
+                direction="column"
+                gap={4}
+                // maxH={500} overflowY="scroll"
               >
                 <Comment />
                 <Comment />
@@ -251,7 +257,7 @@ export default function ProjectCard() {
             </Flex>
           </ModalBody>
 
-          <ModalFooter position='sticky' bottom={0} backgroundColor='white'>
+          <ModalFooter position="sticky" bottom={0} backgroundColor="white">
             <InputGroup>
               <Textarea
                 ref={ref}
