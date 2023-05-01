@@ -9,9 +9,15 @@ import {
   Image,
   Button,
   IconButton,
+  Wrap,
+  Tag,
+  TagLabel,
+  TagRightIcon,
+  Icon,
+  WrapItem
 } from "@chakra-ui/react";
 import ImageCarousel from "./ImageCarousel";
-import { FaThumbsUp } from "react-icons/fa";
+import { FaThumbsUp, FaBookmark } from "react-icons/fa";
 import { TriangleUpIcon, TriangleDownIcon } from "@chakra-ui/icons";
 export default function ProjectCard() {
   const slides = [
@@ -21,10 +27,8 @@ export default function ProjectCard() {
     "https://i.ibb.co/yg7BSdM/4.png",
   ];
 
-  const vote = () => {
-
-  }
-
+  const tags = ['ChakraUI', 'ReactJS', 'JavaScript', 'TypeScript', 'MongoDB', 'ExpressJS']
+  const colours = ['teal', 'green',  'red', 'yellow', 'pink']
   return (
     <Card
       maxW="xl"
@@ -60,12 +64,39 @@ export default function ProjectCard() {
             objectFit="cover"
             src="https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg"
           />
+
+          <Wrap>
+
+            {tags.map((tag, idx) => {
+              return (
+              <WrapItem>
+                <Tag colorScheme={colours[(idx%5)]}>
+                  {tag}
+                </Tag>
+              </WrapItem>
+              )
+            })}
+          </Wrap>
+          {/* <Flex flexDirection='flex-wrap' gap={4}>
+            {tags.map((tag, idx) => {
+              return (
+              <Tag colorScheme={colours[(idx%5)]}>
+                {tag}
+              </Tag>
+
+              )
+            })}
+          </Flex> */}
+
         </Box>
       </CardHeader>
-      <CardFooter>
-        <Flex direction="column">
-            <Button>Save</Button>
-        </Flex>
+      <CardFooter justifyContent='space-between'>
+        <Button>
+          View More
+        </Button>
+          <IconButton variant='ghost' boxSize={12}
+          icon={<Icon as={FaBookmark}/>}
+          />
       </CardFooter>
     </Card>
   );
