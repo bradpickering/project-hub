@@ -40,7 +40,7 @@ import {
 import { TriangleUpIcon, TriangleDownIcon } from "@chakra-ui/icons";
 import { useEffect, useRef } from "react";
 import ResizeTextarea from "react-textarea-autosize";
-
+import Comment from "./Comment";
 export default function ProjectCard() {
   const slides = [
     "https://i.ibb.co/ncrXc2V/1.png",
@@ -137,7 +137,7 @@ export default function ProjectCard() {
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent maxW={{md: '60vw', sm:'90vw'}}>
+        <ModalContent maxW={{ md: "70vw", sm: "90vw" }}>
           <ModalHeader display="flex" justifyContent="center" fontSize={30}>
             Project Title
           </ModalHeader>
@@ -159,9 +159,7 @@ export default function ProjectCard() {
 
               <Divider />
               <Flex direction="column" gap={3}>
-                <Heading size="md" >
-                  Description
-                </Heading>
+                <Heading size="md">Description</Heading>
                 <Text>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -177,11 +175,9 @@ export default function ProjectCard() {
               <Divider marginTop={4} />
 
               <Flex direction="column" gap={3}>
-                <Heading size="md">
-                  Tools and Technologies
-                </Heading>
+                <Heading size="md">Tools and Technologies</Heading>
 
-                <Wrap spacing={8} justify="">
+                <Wrap spacing={8} marginLeft={4}>
                   {tags.map((tag) => {
                     return (
                       <WrapItem>
@@ -208,6 +204,16 @@ export default function ProjectCard() {
                     })}
                   </List> */}
                 </Wrap>
+              </Flex>
+            
+
+              <Divider/>
+              <Heading size="md">Comments</Heading>
+              <Flex direction='column' gap={4}>
+                <Comment/>
+                <Comment/>
+                <Comment/>
+                <Comment/>
               </Flex>
             </Flex>
           </ModalBody>
