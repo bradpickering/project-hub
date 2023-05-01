@@ -85,16 +85,16 @@ export default function ProjectCard() {
               <Flex justify="space-between">
                 <Heading size="lg">Project Title</Heading>
                 <Flex>
-                  <Flex direction="column" gap="1">
+                  <Flex direction="column">
                     <IconButton
                       onClick={(e) => e.preventDefault}
                       variant="ghost"
-                      icon={<TriangleUpIcon boxSize={5} />}
+                      icon={<TriangleUpIcon boxSize={4} />}
                     />
                     <IconButton
                       onClick={(e) => e.preventDefault}
                       variant="ghost"
-                      icon={<TriangleDownIcon boxSize={5} />}
+                      icon={<TriangleDownIcon boxSize={4} />}
                     />
                   </Flex>
                   <Text marginTop={6} marginLeft={2} fontSize="lg" as="bold">

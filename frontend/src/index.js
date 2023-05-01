@@ -6,11 +6,13 @@ import AppWrapper from "./layouts/AppWrapper.tsx";
 import reportWebVitals from "./reportWebVitals";
 import ProjectCard from "./components/ProjectCard";
 import ImageCarousel from "./components/ImageCarousel";
+import Home from "./pages/Home";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <AppWrapper>
-      <ProjectCard />
+      {/* <ProjectCard /> */}
+      <Home />
     </AppWrapper>
   </React.StrictMode>
 );
