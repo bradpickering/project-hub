@@ -1,13 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import AppWrapper from "./layouts/AppWrapper.tsx";
+import reportWebVitals from "./reportWebVitals";
+import ProjectCard from "./components/ProjectCard";
+import ImageCarousel from "./components/ImageCarousel";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <AppWrapper>
+      <ProjectCard />
+    </AppWrapper>
   </React.StrictMode>
 );
 
